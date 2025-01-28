@@ -3,15 +3,11 @@ package com.desafio_picpay.domain.user;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Entity(name = "users")
 @Table(name = "users")
-@Getter
-@Setter
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
@@ -31,4 +27,12 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public UserType getUserType() {
+        return this.userType;
+    }
+
+    public BigDecimal getBalance() {
+        return this.balance;
+    }
 }
