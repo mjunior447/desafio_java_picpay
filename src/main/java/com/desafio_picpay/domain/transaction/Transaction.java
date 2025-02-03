@@ -9,8 +9,6 @@ import java.time.LocalDateTime;
 
 @Entity(name = "transactions")
 @Table(name = "transactions")
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -29,4 +27,20 @@ public class Transaction {
     private User receiver;
 
     private LocalDateTime timestamp;
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public void setReceiver(User receiver) {
+        this.receiver = receiver;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
 }
